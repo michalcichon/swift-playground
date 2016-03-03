@@ -65,3 +65,30 @@ func makeIncrementer() -> ((Int) -> Int) {
 var increment = makeIncrementer()
 let incrementResult = increment(7)
 print("incrementResult=\(incrementResult)")
+
+// function as an argument
+
+func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
+  for item in list {
+    if condition(item) {
+      return true
+    }
+  }
+  return false
+}
+
+func lessThanTen(number: Int) -> Bool {
+  return number < 10
+}
+
+func equalsTen(number: Int) -> Bool {
+  return number == 10
+}
+
+var numbers = [20, 19, 7, 1, 12]
+let a = hasAnyMatches(numbers, condition: lessThanTen)
+print("hasLessThanTen=\(a)")
+
+numbers = [1, 2, 3, 4, 5, 10]
+let b = hasAnyMatches(numbers, condition: equalsTen)
+print("hasEqualsTen=\(b)")
