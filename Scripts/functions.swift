@@ -40,3 +40,28 @@ let sumB = sumOf(42, 597, 12)
 
 print("sumA=\(sumA)")
 print("sumB=\(sumB)")
+
+// nested function
+func returnFifteen() -> Int {
+  var y = 10
+  func add() {
+    y += 5
+  }
+  add()
+  return y
+}
+
+let fifteen = returnFifteen()
+print("fifteen=\(fifteen)")
+
+// returning function
+func makeIncrementer() -> ((Int) -> Int) {
+  func addOne(number: Int) -> Int {
+    return 1 + number
+  }
+  return addOne
+}
+
+var increment = makeIncrementer()
+let incrementResult = increment(7)
+print("incrementResult=\(incrementResult)")
