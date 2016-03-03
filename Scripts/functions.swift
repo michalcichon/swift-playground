@@ -25,3 +25,18 @@ func calculateStatistics(scores: [Int]) -> (min: Int, max: Int, sum: Int) {
 let statistics = calculateStatistics([5, 3, 100, 3, 9])
 print("Sum:", statistics.sum)
 print("Min: \(statistics.0)")
+
+// variable number of arguments
+func sumOf(numbers: Int...) -> Int {
+  var sum = 0
+  for number in numbers {
+    sum += number
+  }
+  return sum
+}
+
+let sumA = sumOf()
+let sumB = sumOf(42, 597, 12)
+
+print("sumA=\(sumA)")
+print("sumB=\(sumB)")
