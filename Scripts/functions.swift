@@ -67,7 +67,6 @@ let incrementResult = increment(7)
 print("incrementResult=\(incrementResult)")
 
 // function as an argument
-
 func hasAnyMatches(list: [Int], condition: (Int) -> Bool) -> Bool {
   for item in list {
     if condition(item) {
