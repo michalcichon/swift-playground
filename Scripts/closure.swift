@@ -17,3 +17,9 @@ let times3onlyEven = numbers.map({
 
 print(times3)
 print(times3onlyEven)
+
+let mappedNumbers = numbers.map({ number in 3 * number })
+print(mappedNumbers)
+
+let sortedNumbers = numbers.sort({ $0 > $1 })
+print(sortedNumbers)
